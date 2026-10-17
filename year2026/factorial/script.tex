@@ -1,0 +1,112 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[a4paper,left=0.50in,right=0.50in,top=0.45in,bottom=0.48in,includefoot,footskip=15pt]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+
+\setdefaultlanguage[numerals=western]{bengali}
+\setotherlanguage{english}
+
+% Requested typefaces: CMU Serif for Latin text, Noto Serif Bengali for Bangla.
+\setmainfont{CMU Serif}
+\newfontfamily\bengalifont[Script=Bengali,Scale=1.0]{Noto Serif Bengali}
+
+\definecolor{formula}{HTML}{29445F}
+\definecolor{pagegray}{HTML}{7C8792}
+
+\newcommand{\EN}[1]{\textenglish{#1}}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\textcolor{pagegray}{\small\thepage}}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1.5pt plus 0.2pt minus 0.2pt}
+\setlength{\abovedisplayskip}{4.5pt plus 0.8pt minus 0.8pt}
+\setlength{\belowdisplayskip}{4.5pt plus 0.8pt minus 0.8pt}
+\setlength{\abovedisplayshortskip}{3.5pt plus 0.8pt minus 0.6pt}
+\setlength{\belowdisplayshortskip}{3.5pt plus 0.8pt minus 0.6pt}
+\setlength{\emergencystretch}{1.5em}
+\linespread{1.00}
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\raggedbottom
+
+\begin{document}
+
+তুমি হয়তো দেখে থাকবে যে \EN{Binomial Theorem}, \EN{Derivatives}, \EN{Combinations}, এমনকি \EN{Taylor Series}-এর মতো বিভিন্ন গাণিতিক বিষয়েও \EN{Factorial}-এর ব্যবহার রয়েছে।
+
+কিন্তু তুমি কি কখনো নিজেকে প্রশ্ন করেছ, \EN{Factorial} জিনিসটা আসলে কী? কেন আমরা একের পর এক সংখ্যা গুণ করতে থাকি?
+
+সাধারণভাবে আমরা জানি,
+
+\[
+\color{formula}\displaystyle n! = 1\times2\times3\times\cdots\times n
+\]
+
+তাই না? কিন্তু প্রশ্ন হচ্ছে, আমরা কেন এভাবে গুণ করি? নিশ্চয়ই এর পেছনে কোনো একটা কারণ আছে।
+
+চলো, বিষয়টা সহজভাবে বোঝার চেষ্টা করি।
+
+ধরো, আমাদের কাছে তিনজন খেলোয়াড় আছে—\EN{A}, \EN{B} এবং \EN{C}। তাদের ফুটবল টিমে তিনটি আলাদা পজিশনে খেলতে হবে: গোলকিপার, ডিফেন্ডার এবং স্ট্রাইকার।
+
+এখন, \EN{A} যদি গোলকিপার হয় আর \EN{B} যদি স্ট্রাইকার হয়, তাহলে তাদের পজিশন অদলবদল করে দিলে কি টিমের বিন্যাস একই থাকবে? না! কারণ খেলোয়াড়দের পজিশন পরিবর্তন হলে টিমের বিন্যাসও পরিবর্তন হয়ে যায়, আর তার সঙ্গে টিমের পারফরম্যান্সও পরিবর্তিত হতে পারে।
+
+তাহলে আমরা একটা প্রশ্ন করতেই পারি: এই তিনজন খেলোয়াড়কে তিনটি আলাদা পজিশনে মোট কতভাবে সাজানো সম্ভব?
+
+চলো, একে একে দেখি।
+
+প্রথম পজিশনে বসানোর জন্য আমাদের কাছে মোট তিনটি \EN{Choice} আছে—\EN{A}, \EN{B} এবং \EN{C}।
+
+ধরো, প্রথম পজিশনে আমরা \EN{A}-কে বসালাম। তাহলে দ্বিতীয় পজিশনে বসানোর জন্য আমাদের কাছে আর দুটি \EN{Choice} থাকবে—\EN{B} এবং \EN{C}। কারণ \EN{A} তো ইতিমধ্যেই প্রথম পজিশনে বসে গেছে।
+
+এবার দ্বিতীয় পজিশনে যদি \EN{B}-কে বসাই, তাহলে তৃতীয় পজিশনে বসানোর জন্য আর একমাত্র \EN{C}-ই বাকি থাকবে। অর্থাৎ, তৃতীয় পজিশনের জন্য \EN{Choice} থাকবে মাত্র একটি।
+
+এখন এই পুরো বিষয়টাকে একটা \EN{Tree Diagram}-এর মাধ্যমে দেখি।
+
+দেখো, এখানে আমাদের তিনটি স্তর রয়েছে—প্রথম পজিশন, দ্বিতীয় পজিশন এবং তৃতীয় পজিশন।
+
+প্রথম পজিশনের জন্য তিনটি \EN{Choice} থাকায় আমরা তিনটি শাখা তৈরি করব—\EN{A}, \EN{B} এবং \EN{C}।
+
+এবার প্রথম পজিশনে \EN{A}-কে বসালে, সেখান থেকে দ্বিতীয় পজিশনের জন্য দুটি শাখা বের হবে—\EN{B} এবং \EN{C}। একইভাবে, প্রথম পজিশনে \EN{B}-কে বসালেও দুটি শাখা বের হবে। \EN{C}-কে বসালেও দুটি শাখা বের হবে।
+
+অর্থাৎ, প্রথম পজিশনের তিনটি \EN{Choice}-এর প্রতিটির জন্য দ্বিতীয় পজিশনে দুটি করে \EN{Choice} রয়েছে।
+
+তাহলে প্রথম দুটি পজিশন পূরণ করার মোট উপায় হবে কত?
+
+তিন গুণ দুই, অর্থাৎ ছয়টি।
+
+এবার এই ছয়টি বিন্যাসের প্রতিটির জন্য তৃতীয় পজিশনে বসানোর মতো একজন খেলোয়াড়ই বাকি থাকবে। তাই প্রত্যেকটি শাখা থেকে তৃতীয় পজিশনের জন্য একটি করে শাখা তৈরি হবে।
+
+অর্থাৎ, মোট সম্পূর্ণ বিন্যাসের সংখ্যা হবে,
+
+\[
+\color{formula}\displaystyle 3\times2\times1=6
+\]
+
+দেখো, তিনজন খেলোয়াড়কে তিনটি আলাদা পজিশনে মোট ছয়ভাবে সাজানো সম্ভব।
+
+আর এই গুণফলটাকেই আমরা \EN{Factorial}-এর সাহায্যে সংক্ষেপে লিখতে পারি,
+
+\[
+\color{formula}\displaystyle 3! = 3\times2\times1 = 6
+\]
+
+এখন, আমরা যদি তিনজন খেলোয়াড়ের বদলে \ensuremath{(n)} সংখ্যক খেলোয়াড়কে \ensuremath{(n)}টি আলাদা পজিশনে বসানোর কথা চিন্তা করি, তাহলে প্রথম পজিশনের জন্য আমাদের কাছে থাকবে \ensuremath{(n)}টি \EN{Choice}, দ্বিতীয় পজিশনের জন্য \ensuremath{(n-1)}টি \EN{Choice}, তৃতীয় পজিশনের জন্য \ensuremath{(n-2)}টি \EN{Choice}। এভাবে চলতে থাকবে শেষ পজিশন পর্যন্ত।
+
+তাহলে মোট বিন্যাসের সংখ্যা হবে,
+
+\[
+\color{formula}\displaystyle n\times(n-1)\times(n-2)\times\cdots\times2\times1
+\]
+
+আর এই গুণফলকেই আমরা লিখি \ensuremath{(n!)}, অর্থাৎ \ensuremath{(n)} \EN{Factorial}।
+
+এভাবেই আমরা বুঝতে পারি, \EN{Factorial}-এর সঙ্গে কোনো কিছু সাজানোর বা বিন্যস্ত করার সমস্যার একটি গভীর সম্পর্ক রয়েছে।
+
+\end{document}
