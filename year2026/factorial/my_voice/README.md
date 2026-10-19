@@ -1,6 +1,6 @@
 # Factorial — নিজের কণ্ঠে (my_voice, v1)
 
-Status: ✅ v1 সম্পূর্ণ (owner review-তে পছন্দ হয়েছে)। এই ফোল্ডারটা এখন local draft-এ সাজানো হচ্ছে; GitHub push বাকি।
+Status: ✅ v1 সম্পূর্ণ ও GitHub-এ প্রকাশিত (owner review-তে পছন্দ হয়েছে)। Final ভিডিও: [Release `factorial-my-voice-v1`](https://github.com/myabdur2121-cpu/1Fill2Blank/releases/tag/factorial-my-voice-v1)।
 
 ## ফল
 
