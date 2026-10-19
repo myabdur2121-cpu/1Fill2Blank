@@ -61,3 +61,14 @@
 
 ## একটি repo নোট
 আপনার দেওয়া `manim-projects` লিংকটি unauthenticated GitHub থেকে 404 দিয়েছে (private/renamed হতে পারে)। তবে প্রয়োজনীয় Factorial scene ও production উপকরণ `trush` রিপোর ভেতরের কপি এবং আলাদা `1Fill2Blank` রিপোতে পাওয়া গেছে, তাই কাজ আটকায়নি। কোনো GitHub token ব্যবহার করা হয়নি এবং কোনো push করা হয়নি।
+
+### প্রকাশ-পরবর্তী সংযোজন (2026-10-19)
+
+ওপরের অনুচ্ছেদটি production শেষ হওয়ার মুহূর্তের রেকর্ড—তখন পর্যন্ত সত্যিই
+কোনো token/push হয়নি। পরে একই দিনে মালিকের অনুমতিতে কাজটি প্রকাশ করা হয়:
+এই project `1Fill2Blank` repo-র `main`-এ ওঠে (PR #1, পরে status PR #2) এবং
+final MP4 প্রকাশিত হয় GitHub Release `factorial-my-voice-v1`-এ। Reusable
+skill/tools এরপর `1Fill2Blank-Tools`-এ পৃথকভাবে version ধরে এগিয়েছে
+(v0.2.x)। বর্তমান canonical অবস্থা জানতে এই ফোল্ডারের `README.md` ও
+`REBUILD.md` দেখুন। এই সংযোজন শুধু বিভ্রান্তি এড়াতে; production-এর
+মূল সিদ্ধান্ত ও রেকর্ড অপরিবর্তিত রাখা হলো।
