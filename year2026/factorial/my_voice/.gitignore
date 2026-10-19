@@ -1,0 +1,5 @@
+# Generated working artifacts for this variant — recipes/manifests are kept, media is not.
+audio_clean/
+output/
+__pycache__/
+*.wav
