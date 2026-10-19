@@ -1,0 +1,70 @@
+{
+  "project": {
+    "id": "factorial",
+    "title": "Factorial — user's own voice (1Fill2Blank)",
+    "variant": "my_voice",
+    "language": "bn",
+    "version": "v1"
+  },
+  "skill": {
+    "name": "voice-to-manim",
+    "version": "0.1.0-draft",
+    "tools_repo": "1Fill2Blank-Tools"
+  },
+  "sources": {
+    "script": "../script.tex",
+    "base_scene": "../factorial_scene.py",
+    "voice_folder": "https://github.com/myabdur212121-afk/trush/tree/main/my_voice_for_factrioal",
+    "enhanced_subfolder": "adobe_enhance_voice",
+    "source_status_note": "Verified 2026-10-19: GitHub trush contains 39 enhanced WAVs in adobe_enhance_voice plus the raw recordings. A dry-run rebuild of voice_units.json from that source reproduced every numeric value exactly. See REBUILD.md."
+  },
+  "audio": {
+    "audio_pattern": "{segment}.wav",
+    "sample_rate_hz": 48000,
+    "order": [
+      "M01", "M02", "M03", "M04", "LOGO_MID", "M05", "M06", "M07", "M08", "M09",
+      "M10", "M11", "M12", "M13", "M14", "M15", "M16", "M17", "M18", "M19",
+      "M20", "M21", "M22", "M23", "M24", "M25", "M26", "M27", "M28", "M29",
+      "M30", "M31", "M32", "M33", "M34", "M35", "M36", "M37", "M38", "M39",
+      "M40", "OUTRO", "END"
+    ],
+    "voice_segments": [
+      "M01", "M02", "M03", "M04", "M05", "M06", "M07", "M08", "M09", "M10",
+      "M11", "M12", "M13", "M14", "M15", "M16", "M17", "M18", "M19", "M20",
+      "M21", "M22", "M23", "M24", "M25", "M26", "M27", "M28", "M29", "M30",
+      "M31", "M32", "M33", "M34", "M35", "M36", "M37", "M38", "M39", "M40"
+    ]
+  },
+  "gap_policy_s": {
+    "question": [0.9, 1.1],
+    "sentence": [0.3, 0.45],
+    "lead_in": [0.18, 0.25],
+    "note": "Exact per-unit values are in timing/voice_units.json (gap_after_speech_s), measured between actual speech."
+  },
+  "music": {
+    "preset": "background",
+    "bpm": 72,
+    "seed": 7,
+    "target_peak": 0.62,
+    "music_below_voice_db": 11.0,
+    "ducking": {"threshold": 0.02, "ratio": 6, "attack_ms": 150, "release_ms": 850}
+  },
+  "output": {
+    "width": 1920,
+    "height": 1080,
+    "fps": 30,
+    "final_file": "Factorial_1Fill2Blank_MY_VOICE_FINAL.mp4",
+    "release_tag": "factorial-my-voice-v1",
+    "duration_s": 249.6
+  },
+  "qc_targets": {
+    "loudness_lufs_range": [-16, -14],
+    "true_peak_max_dbtp": -1.0
+  },
+  "qc_measured_v1": {
+    "loudness_lufs": -15.22,
+    "true_peak_dbtp": -1.4,
+    "full_decode": "OK",
+    "long_silence_over_3s_below_minus45db": "none"
+  }
+}
